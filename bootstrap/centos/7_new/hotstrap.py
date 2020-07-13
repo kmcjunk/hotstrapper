@@ -32,9 +32,9 @@ def pip_down():
 # Remove git repo if it exist (should never come up but might as well)
 # Clone git repo that has all our configuration files
 def download_git():
-    endpoint = 'https://github.com/kmcjunk/hotstrapper/archive/master.zip'
+    endpoint = 'https://github.com/kmcjunk/hotstrapper/archive/staging.zip'
     os.system('wget {}'.format(endpoint))
-    os.system('unzip master.zip')
+    os.system('unzip staging.zip')
 
 # Move configuration files to the proper location on the OS
 # ...and use a really ghetto create directory for the move
@@ -54,8 +54,8 @@ def configurate():
         directory = os.path.dirname('/' + file)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        print('hotstrapper-master/bootstrap/centos/7/' + file + '\t->\t' + '/' + file)
-        shutil.move('hotstrapper-master/bootstrap/centos/7/' + file, '/' + file)
+        print('hotstrapper-staging/bootstrap/centos/7/' + file + '\t->\t' + '/' + file)
+        shutil.move('hotstrapper-staging/bootstrap/centos/7/' + file, '/' + file)
     for i in range(3):
         os.chmod('/' + file_list[i], 0700)
     for i in range(3, 6):
@@ -72,10 +72,10 @@ def jiggle_some_things():
     os.system('cat /etc/os-collect-config.conf')
     os.system('os-collect-config --one-time --debug')
     print('\nEnsuring everything is running & enabled on boot')
-    subprocess.call('hotstrapper-master/bootstrap/centos/7/start_config_agent.sh')
+    subprocess.call('hotstrapper-staging/bootstrap/centos/7/start_config_agent.sh')
     print('\nCleaning up git folder')
-    shutil.rmtree('hotstrapper-master/')
-    os.system('rm -f master.zip')
+    shutil.rmtree('hotstrapper-staging/')
+    os.system('rm -f staging.zip')
 
 
 # Ensure we don't get rekt by cloud-init next boot
