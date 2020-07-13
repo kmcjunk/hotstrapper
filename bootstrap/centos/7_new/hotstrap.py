@@ -8,8 +8,6 @@ import subprocess
 import shutil
 
 
-
-
 # Install required packages via pip
 def pip_down():
     print('\nInstalling OpenStack HEAT requirements via pip')
@@ -29,11 +27,9 @@ def pip_down():
         print('Unsuccessful')
 
 
-
-
 # Move configuration files to the proper location on the OS
 # ...and use a really ghetto create directory for the move
-# chmod files properly
+# then chmod files properly
 def configurate():
     file_list = ['opt/stack/os-config-refresh/configure.d/20-os-apply-config',
                  'opt/stack/os-config-refresh/configure.d/55-heat-config',
