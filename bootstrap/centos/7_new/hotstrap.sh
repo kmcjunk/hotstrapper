@@ -17,4 +17,4 @@ virtualenv /etc/.rackspace_heat
 wget https://github.com/kmcjunk/hotstrapper/archive/staging.zip
 unzip staging.zip
 
-python -u hotstrapper-staging/bootstrap/centos/7/hotstrap.py
+python -u hotstrapper-staging/bootstrap/centos/7_new/hotstrap.py
