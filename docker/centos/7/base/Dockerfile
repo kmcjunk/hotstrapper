@@ -1,8 +1,6 @@
 FROM centos:7
 ENV container docker
 
-RUN yum update -y
-
 RUN yum -y install systemd; yum clean all; \
 (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
@@ -15,20 +13,14 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]
 
+RUN yum install python-pip wget unzip gcc python-devel libyaml-devel \
+openssl-devel libffi-devel libxml2-devel libxslt-devel puppet -y
 
-RUN yum --enablerepo=extras install epel-release -y
-RUN yum install python-pip wget unzip -y
-
-RUN pip install --upgrade pip
-RUN pip install --upgrade setuptools
-RUN pip install virtualenv
-
-RUN virtualenv /etc/.rackspace_heat
 
 
 ADD bootstrap/centos/7_new/hotstrap.sh hotstrap.sh
 ADD bootstrap/centos/7_new/hotstrap.py hotstrap.py
 
 
-CMD ["hotstrap.py"]
-ENTRYPOINT ["python", "-u"]
+CMD ["sleep 999999999999"]
+ENTRYPOINT ["bash", "-c"]
