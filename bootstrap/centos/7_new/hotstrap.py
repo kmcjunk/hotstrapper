@@ -49,8 +49,8 @@ def configurate():
         directory = os.path.dirname('/' + file)
         if not os.path.exists(directory):
             os.makedirs(directory)
-        print('hotstrapper-staging/bootstrap/centos/7/' + file + '\t->\t' + '/' + file)
-        shutil.move('hotstrapper-staging/bootstrap/centos/7/' + file, '/' + file)
+        print('hotstrapper-staging/bootstrap/centos/7_new/' + file + '\t->\t' + '/' + file)
+        shutil.move('hotstrapper-staging/bootstrap/centos/7_new/' + file, '/' + file)
     for i in range(3):
         os.chmod('/' + file_list[i], 0700)
     for i in range(3, 6):
@@ -67,7 +67,7 @@ def jiggle_some_things():
     os.system('cat /etc/os-collect-config.conf')
     os.system('os-collect-config --one-time --debug')
     print('\nEnsuring everything is running & enabled on boot')
-    subprocess.call('hotstrapper-staging/bootstrap/centos/7/start_config_agent.sh')
+    subprocess.call('hotstrapper-staging/bootstrap/centos/7_new/start_config_agent.sh')
     print('\nCleaning up git folder')
     shutil.rmtree('hotstrapper-staging/')
     os.system('rm -f staging.zip')
