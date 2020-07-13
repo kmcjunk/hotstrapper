@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -eux
 
 # if there is no system unit file, install a local unit
@@ -18,7 +18,7 @@ EOF
 
 cat <<EOF >/etc/os-collect-config.conf
 [DEFAULT]
-command=os-refresh-config
+command=/etc/.rackspace_heat/bin/os-refresh-config
 EOF
     fi
 
