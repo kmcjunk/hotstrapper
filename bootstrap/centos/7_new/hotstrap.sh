@@ -13,8 +13,9 @@ pip install virtualenv
 virtualenv /etc/.rackspace_heat
 . /etc/.rackspace_heat/bin/activate
 
-
 wget https://github.com/kmcjunk/hotstrapper/archive/staging.zip
 unzip staging.zip
 
 python -u hotstrapper-staging/bootstrap/centos/7_new/hotstrap.py
+
+deactivate
