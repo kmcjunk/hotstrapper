@@ -29,12 +29,7 @@ def pip_down():
         print('Unsuccessful')
 
 
-# Remove git repo if it exist (should never come up but might as well)
-# Clone git repo that has all our configuration files
-def download_git():
-    endpoint = 'https://github.com/kmcjunk/hotstrapper/archive/staging.zip'
-    os.system('wget {}'.format(endpoint))
-    os.system('unzip staging.zip')
+
 
 # Move configuration files to the proper location on the OS
 # ...and use a really ghetto create directory for the move
@@ -92,7 +87,6 @@ def delete_some_other_things():
 
 
 pip_down()
-download_git()
 configurate()
 jiggle_some_things()
 delete_some_other_things()
