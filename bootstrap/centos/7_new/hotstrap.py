@@ -15,6 +15,7 @@ def pip_down():
                'os-apply-config',
                'os-collect-config',
                'os-refresh-config',
+               'dib-utils'
                ]
     try:
         for package in os_list:
