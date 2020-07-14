@@ -9,6 +9,7 @@ openssl-devel libffi-devel libxml2-devel libxslt-devel puppet git -y
 pip install --upgrade pip
 pip install --upgrade setuptools
 pip install virtualenv
+pip install dib-utils
 
 virtualenv /etc/.rackspace_heat
 . /etc/.rackspace_heat/bin/activate
@@ -19,4 +20,5 @@ unzip staging.zip
 python -u hotstrapper-staging/bootstrap/centos/7_new/hotstrap.py
 
 ln -s /etc/.rackspace_heat/bin/os-refresh-config /usr/bin/os-refresh-config
+
 deactivate
