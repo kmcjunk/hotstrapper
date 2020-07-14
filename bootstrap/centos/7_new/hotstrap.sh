@@ -9,8 +9,11 @@ openssl-devel libffi-devel libxml2-devel libxslt-devel puppet git -y
 # Install required modules
 pip install --upgrade pip
 pip install --upgrade setuptools
-pip install virtualenv
-pip install dib-utils
+
+for module in ansible==2.4.3.0 virtualenv dib-utils "-U decorator"; \
+  do pip install $module ; \
+done
+
 
 # Create HEAT venv & activate it
 virtualenv /etc/.rackspace_heat
