@@ -14,10 +14,11 @@ def pip_down():
     os_list = [
                'os-apply-config',
                'os-collect-config',
+               'os-refresh-config',
                'dib-utils',
                '-U decorator',
                'ansible==2.4.3.0',
-               '-U git+https://github.com/kmcjunk/os-refresh-config.git'
+               # '-U git+https://github.com/kmcjunk/os-refresh-config.git'
                ]
     try:
         for package in os_list:
