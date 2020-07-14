@@ -18,4 +18,5 @@ unzip staging.zip
 
 python -u hotstrapper-staging/bootstrap/centos/7_new/hotstrap.py
 
+ln -s /etc/.rackspace_heat/bin/os-refresh-config /usr/bin/os-refresh-config
 deactivate
