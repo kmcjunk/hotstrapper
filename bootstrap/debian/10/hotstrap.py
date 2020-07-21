@@ -22,7 +22,7 @@ def pip_down():
     try:
         for package in os_list:
             print('Installing ' + package)
-            os.system('/etc/.rackspace_heat/bin/pip3 ' + package)
+            os.system('/etc/.rackspace_heat/bin/pip3 install ' + package)
             print('Successful')
     except:
         print('Unsuccessful')
