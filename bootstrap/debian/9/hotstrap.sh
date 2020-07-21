@@ -2,6 +2,7 @@
 set -eux
 
 # Download required packages / removed openssl-dev
+apt-get update -y
 apt-get install python3-pip wget unzip gcc python-dev libyaml-dev \
 libffi-dev libxml2-dev libxslt-dev puppet git -y
 
@@ -23,7 +24,7 @@ wget https://github.com/kmcjunk/hotstrapper/archive/staging.zip
 unzip staging.zip
 
 # Run hotstrap
-python -u hotstrapper-staging/bootstrap/debian/9/hotstrap.py
+/etc/.rackspace_heat/bin/python3 -u hotstrapper-staging/bootstrap/debian/9/hotstrap.py
 
 # link venv binaries to global
 ln -s /etc/.rackspace_heat/bin/os-refresh-config /usr/bin/os-refresh-config

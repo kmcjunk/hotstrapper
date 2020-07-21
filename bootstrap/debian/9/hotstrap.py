@@ -1,4 +1,4 @@
-#!/etc/.rackspace_heat/bin/python
+#!/etc/.rackspace_heat/bin/python3
 # 6/27/2019
 # Author: Kevin McJunkin
 # Use away if this is somehow relevant to ya
