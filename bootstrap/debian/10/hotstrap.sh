@@ -10,7 +10,7 @@ libffi-dev libxml2-dev libxslt-dev puppet git -y
 # pip3 install --upgrade pip
 # pip3 install --upgrade setuptools
 
-for module in ansible==2.4.3.0 dib-utils "-U decorator"; \
+for module in ansible==2.5.15 dib-utils "-U decorator"; \
   do pip3 install $module ; \
 done
 
