@@ -23,6 +23,9 @@ python3 -m venv /etc/.rackspace_heat
 wget https://github.com/kmcjunk/hotstrapper/archive/staging.zip
 unzip staging.zip
 
+# Fix locales for docker
+export LC_ALL=C
+
 # Run hotstrap
 /etc/.rackspace_heat/bin/python -u hotstrapper-staging/bootstrap/debian/10/hotstrap.py
 
