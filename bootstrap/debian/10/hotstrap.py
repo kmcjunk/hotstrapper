@@ -12,8 +12,8 @@ import shutil
 def pip_down():
     print('\nInstalling OpenStack HEAT requirements via pip')
     os_list = [
-               '--upgrade pip'
-               '--upgrade setuptools'
+               '--upgrade pip',
+               '--upgrade setuptools',
                'os-apply-config',
                'os-collect-config',
                'os-refresh-config',
